@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+hr {
+      margin: 0;
+}
+
+nav .material-icons {
+      font-size: 1rem;
+}
+
+/* == Container == */
+.body {
+      font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+      width: 95%;
+      margin: 0 auto;
+}
+
+/* == Heading == */
+h4 {
+      font-weight: 600;
+      padding: 0.5em;
+}
+
+h5 {
+      text-align: center;
+      margin-top: 3em;
+}
+
+/* == Form == */
+form {
+      width: 100%;
+      margin: 0 auto;
+}
+
+/* == Input Tag == */
+input,
+textarea {
+      border: 0;
+      border-radius: var(--bs-enable-rounded);
+      font-size: 1rem;
+      font-weight: 400;
+      background-color: #f2f2f2;
+      margin: 1em 0;
+}
+
+/* == Buttons == */
+button {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 1.5em;
+      padding-left: 2em;
+      padding-right: 2em;
+}
+
+.button-div {
+      display: grid;
+      margin: 3em;
+}
+
+/* == Media Queries == */
+@media (min-width: 992px) {
+
+      .body {
+            height: 100vh;
+            background-color: #d9d9d9;
+      }
+
+      .wrapper {
+            width: 60%;
+            background-color: #fff;
+            border-radius: 0.5em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            padding-bottom: 0.1em;
+      }
+
+      form {
+            width: 50%;
+            margin: 0 auto;
+      }
+
+      .button-div {
+            display: flex;
+            justify-content: center;
+            margin: 4em 0;
+      }
+}

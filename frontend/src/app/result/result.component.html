@@ -1,0 +1,38 @@
+<div class="body">
+      <app-header [activeUser]="activeUser" [navbarShade]="navbarShade" [navbarColor]="navbarColor"></app-header>
+      <nav class="navbar bg-light">
+            <div class="container">
+                  <a routerLink="/home/{{activeUser}}" class="nav-link">
+                        <span class="material-icons">
+                              arrow_back_ios
+                        </span>
+                  </a>
+            </div>
+      </nav>
+      <div class="wrapper">
+            <h6> Showing results for <em>{{searchText}}</em></h6>
+            <app-result-not-found *ngIf="!resultFound"></app-result-not-found>
+            <div class="result-page">
+                  <button class="card btn" *ngFor="let item of list"
+                        routerLink="/home/{{activeUser}}/search/{{searchText}}/{{item.id}}">
+                        <img src="{{item.image_url}}" class="card-img-top" alt="product-image">
+                        <div class="card-body">
+                              <h6 class="card-title">{{item.brand}} {{item.name}}</h6>
+                              <div class="card-text">
+                                    <div *ngIf=item.avgRating class=" average-rating">
+                                          {{item.avgRating}}
+                                          <span class="material-icons">
+                                                star
+                                          </span>
+                                    </div>
+                                    <div *ngIf=item.totalReviews class="total-reviews text-muted">
+                                          {{item.totalReviews}}</div>
+                              </div>
+                              <h5 class="card-text">&#8377; {{item.price}}</h5>
+                        </div>
+                  </button>
+
+            </div>
+      </div>
+
+</div>

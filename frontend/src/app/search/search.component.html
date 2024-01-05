@@ -1,0 +1,10 @@
+<div class="body">
+      <form [formGroup]="inputReader" (ngSubmit)="search()" class="input-group">
+            <button type="submit" class="input-group-text">
+                  <span class="material-icons">
+                        search
+                  </span>
+            </button>
+            <input type="text" class="form-control" placeholder="Search the Website" formControlName="searchText">
+      </form>
+</div>

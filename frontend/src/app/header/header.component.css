@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+nav {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+}
+
+.btn {
+      border-radius: var(--bs-enable-rounded);
+      margin: 0 1em;
+}
+
+ul li:first-of-type {
+      visibility: hidden;
+}
+
+/* == Media Queries == */
+@media (min-width: 992px) {
+      ul li:first-of-type {
+            visibility: visible;
+      }
+}

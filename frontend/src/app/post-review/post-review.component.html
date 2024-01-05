@@ -1,0 +1,76 @@
+<div class="body">
+      <app-header [activeUser]="activeUser" [navbarShade]="navbarShade" [navbarColor]="navbarColor"></app-header>
+      <nav class="navbar">
+            <div class="container">
+                  <a routerLink="/home/{{this.activeUser}}/search/{{searchText}}/{{productId}}" class="nav-link">
+                        <span class="material-icons">
+                              arrow_back_ios
+                        </span>
+                  </a>
+            </div>
+      </nav>
+
+      <div class="wrapper">
+            <h4>
+                  Post a review
+            </h4>
+            <hr>
+
+            <form [formGroup]="inputReader" (ngSubmit)="onClick()">
+
+                  <div class="form-floating">
+                        <input type="text" class="form-control" placeholder="Subject" formControlName="subject">
+                        <label for="floatingInput">Subject</label>
+                  </div>
+
+                  <textarea class="form-control" placeholder="Body" formControlName="body" rows="4"
+                        maxlength="400"></textarea>
+
+                  <div class="radio-check">
+
+                        <div class="form-check ">
+                              <input class="form-check-input" type="radio" name="rating" value="1"
+                                    formControlName="rating">
+                              <div class="material-icons form-check-label">
+                                    sentiment_very_dissatisfied
+                              </div>
+                        </div>
+                        <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rating" value="2"
+                                    formControlName="rating">
+
+                              <div class="material-icons form-check-label">
+                                    sentiment_dissatisfied
+                              </div>
+
+                        </div>
+                        <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rating" value="3"
+                                    formControlName="rating">
+                              <div class="material-icons form-check-label">
+                                    sentiment_satisfied
+                              </div>
+                        </div>
+                        <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rating" value="4"
+                                    formControlName="rating">
+                              <div class="material-icons form-check-label">
+                                    sentiment_satisfied_alt
+                              </div>
+                        </div>
+                        <div class="form-check">
+                              <input class="form-check-input" type="radio" name="rating" value="5"
+                                    formControlName="rating">
+                              <div class="material-icons">
+                                    sentiment_very_satisfied
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="button-div">
+                        <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+                  </div>
+            </form>
+
+      </div>
+</div>

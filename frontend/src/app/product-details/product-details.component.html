@@ -1,0 +1,33 @@
+<div class="body">
+      <app-header [activeUser]="activeUser" [navbarShade]="navbarShade" [navbarColor]="navbarColor"></app-header>
+      <nav class="navbar bg-light">
+            <div class="container">
+                  <a routerLink="/home/{{this.activeUser}}/search/{{searchText}}" class="nav-link">
+                        <span class="material-icons">
+                              arrow_back_ios
+                        </span>
+                  </a>
+                  <button class="btn btn-dark"
+                        routerLink="/home/{{activeUser}}/search/{{searchText}}/{{productId}}/post-review"
+                        [disabled]="isDisabled">
+                        Post a review </button>
+            </div>
+      </nav>
+      <div class="wrapper">
+            <div *ngFor="let item of list">
+                  <div *ngIf="item.isApproved" class="card">
+                        <div class="card-body">
+                              <h5 class="card-title">{{item.subject}}</h5>
+                              <div class="card-subtitle">
+                                    {{item.rating}}
+                                    <span class="material-icons">
+                                          star
+                                    </span>
+                              </div>
+                              <p class="card-text">{{item.body}}</p>
+                              <div class="text-muted reviewedBy"><em>Review by:</em> {{item.username}}</div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>

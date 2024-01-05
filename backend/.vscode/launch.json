@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Spring Boot-ProductCommunityWebsiteApplication<product-community-website>",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"mainClass": "com.project.files.ProductCommunityWebsiteApplication",
+			"projectName": "product-community-website",
+			"args": "",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}

@@ -1,0 +1,75 @@
+.body {
+        width: 100%;
+}
+
+/* == Table == */
+table {
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        font-size: 0.9rem;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        vertical-align: middle;
+}
+
+table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+
+}
+
+table th,
+table td {
+        padding: 12px 15px;
+}
+
+table tbody tr {
+        border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+}
+
+table tbody tr:hover {
+        color: #009879;
+}
+
+/* == Button == */
+td button {
+        border: 0;
+        margin: 0;
+        padding: 0;
+}
+
+/* == Login Status == */
+.loginStatus {
+        color: #fff;
+        font-size: 0.8rem;
+        text-align: center;
+        width: 4em;
+        padding: 0.25em 0;
+        border-radius: var(--bs-enable-rounded);
+}
+
+.offline {
+        background-color: #ff0000;
+}
+
+.online {
+        background-color: #00b300;
+}
+
+/* == Media Queries == */
+@media (min-width: 992px) {
+        .body {
+                width: 80%;
+                margin: 0 auto;
+        }
+}

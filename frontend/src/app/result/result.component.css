@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.body {
+      background: #f2f2f2;
+      font-family: 'Roboto', sans-serif;
+}
+
+/* == Header Bar == */
+
+nav a {
+      border-radius: var(--bs-enable-rounded);
+}
+
+/* == Main Body == */
+
+.wrapper {
+      margin: 0.5em auto;
+      background: #fff;
+}
+
+.result-page {
+      display: flex;
+      flex-direction: column;
+}
+
+/* Card */
+.card {
+      border: 0;
+      margin: 1em 0;
+}
+
+.card>img {
+      height: 15rem;
+      object-fit: contain;
+}
+
+.card-text {
+      display: flex;
+      align-items: center;
+      column-gap: 2.5em;
+      margin: 0.5em 0;
+      font-weight: 400;
+}
+
+.average-rating {
+      color: #fff;
+      background-color: #398E3D;
+      font-size: 0.8rem;
+      width: 3.5em;
+      padding: 0.1em;
+      border-radius: 0.25em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.3em;
+}
+
+.material-icons {
+      font-size: 0.8rem;
+}
+
+/* == Heading ==  */
+.wrapper>h6 {
+      margin: 1em;
+      font-weight: 300;
+}
+
+h6 {
+      font-weight: 400;
+}
+
+
+/* == Media Queries == */
+@media (min-width: 992px) {
+      .wrapper {
+            width: 80%;
+            border: 0.25em solid #f2f2f2;
+            border-bottom: 0;
+      }
+
+      .result-page {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+      }
+}

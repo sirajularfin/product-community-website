@@ -1,0 +1,110 @@
+<nav class="navbar bg-light">
+	<div class="container">
+		<button type="button" (click)="reset()" class="btn btn-dark" data-bs-toggle="modal"
+			data-bs-target="#addProductModal">Add
+			Product</button>
+	</div>
+</nav>
+
+<div class="body">
+	<div *ngFor="let item of list" class="card">
+
+		<!-- Card Body -->
+
+		<div class="button-wrapper">
+			<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal"
+				(click)="edit(item.id)">
+				<span class=" material-icons">
+					edit
+				</span>
+			</button>
+			<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal"
+				(click)="deleteItem = item.id">
+				<span class=" material-icons">
+					clear
+				</span>
+			</button>
+		</div>
+
+		<img src="{{item.image_url}}" class="card-img-top" alt="product-image">
+		<div class="card-body">
+			<h6 class="card-title text-truncate">{{item.name}}</h6>
+			<div class="card-text">
+				<div *ngIf=item.avgRating class=" average-rating">
+					{{item.avgRating}}
+					<span class="material-icons">
+						star
+					</span>
+				</div>
+				<div *ngIf=item.totalReviews class="total-reviews text-muted">
+					{{item.totalReviews}}
+				</div>
+			</div>
+			<h5 class="card-text">&#8377; {{item.price}}</h5>
+		</div>
+
+	</div>
+</div>
+
+<!-- Confirmation Modal-->
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"> Message </h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to delete it?
+				<div class="text-danger">
+					<em>Note: This can't be undone and
+						will get
+						permanently deleted.
+					</em>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+					(click)="delete()">Delete</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Add Product Modal -->
+
+<div class="modal" id="addProductModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Product Details</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="inputReader">
+					<input type="text" class="form-control form-control-lg" placeholder="Name *"
+						formControlName="name" required>
+					<div class="rows">
+						<input type="text" class="form-control form-control-lg"
+							placeholder="Brand *" formControlName="brand" required>
+						<input type="text" class="form-control form-control-lg"
+							placeholder="Code *" formControlName="code" required>
+					</div>
+
+					<input type="text" class="form-control form-control-lg" placeholder="Price *"
+						formControlName="price" required>
+					<input type="url" class="form-control form-control-lg" placeholder="Image URL *"
+						formControlName="image_url" required>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button (click)="onSubmit()" type="button" class="btn btn-primary">Add</button>
+			</div>
+		</div>
+	</div>
+</div>

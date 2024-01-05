@@ -1,0 +1,52 @@
+<div *ngIf="alert" id="alert" class="alert alert-danger" role="alert">
+	<span class="material-icons">
+		warning
+	</span>
+	{{alertMsg}}
+</div>
+<div class="body">
+	<app-header [activeUser]="activeUser" [navbarShade]="navbarShade" [navbarColor]="navbarColor"></app-header>
+	<nav class="navbar">
+		<div class="container">
+			<a routerLink="/home/{{this.activeUser}}" class="nav-link">
+				<span class="material-icons">
+					arrow_back_ios
+				</span>
+			</a>
+		</div>
+	</nav>
+
+	<div class="wrapper">
+		<h4>
+			Request a review
+		</h4>
+		<hr>
+		<h5>Enter the product details:</h5>
+
+		<form [formGroup]="inputReader" (ngSubmit)="onSubmit()">
+			<div class="form-floating">
+				<input type="text" class="form-control" placeholder="Product Name"
+					formControlName="name">
+				<label for="floatingInput">Name</label>
+			</div>
+
+			<div class="form-floating">
+				<input type="text" class="form-control" placeholder="Product Code"
+					formControlName="code">
+				<label for="floatingInput">Code</label>
+			</div>
+
+			<div class="form-floating">
+				<input type="text" class="form-control" placeholder="Product Brand"
+					formControlName="brand">
+				<label for=" floatingInput">Brand</label>
+			</div>
+
+			<div class="button-div">
+				<button type="submit" class="btn btn-dark btn-lg" (click)="onClick()">Submit</button>
+			</div>
+		</form>
+
+	</div>
+
+</div>

@@ -1,0 +1,37 @@
+<div *ngIf="alert" id="alert" class="alert alert-danger" role="alert">
+      <span class="material-icons">
+            warning
+      </span>
+      {{alertMsg}}
+</div>
+<div class="body">
+      <div>
+            <h4>
+                  <a routerLink='' class="back">
+                        <span class="material-icons">
+                              arrow_back_ios
+                        </span>
+                  </a>
+                  Log in
+            </h4>
+            <hr>
+            <div class="wrapper">
+                  <h5>Enter your email and password:</h5>
+                  <form [formGroup]="inputReader" (ngSubmit)="checkCredentials()">
+                        <div class="form-floating">
+                              <input type="email" class="form-control" placeholder="Email *" formControlName="email">
+                              <label>Email * </label>
+                        </div>
+                        <div class="form-floating">
+                              <input type="password" class="form-control" placeholder="Password *"
+                                    formControlName="paswd">
+                              <label>Password * </label>
+                        </div>
+                        <div class="button-div">
+                              <button (click)="reset()" type="submit" class="btn btn-dark btn-lg">Submit</button>
+                        </div>
+                  </form>
+            </div>
+            <a routerLink="/register">New user? Register here</a>
+      </div>
+</div>

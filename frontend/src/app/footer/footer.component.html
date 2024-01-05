@@ -1,0 +1,36 @@
+<footer>
+      <div class="body">
+            <div class="member">
+                  <span class="material-icons">
+                        groups
+                  </span>
+
+                  <div class="details">
+                        <div class="member-count">{{totalUsers}}</div>
+                        <div class="title">Members</div>
+                  </div>
+
+            </div>
+            <div class="post">
+                  <span class="material-icons">
+                        chat
+                  </span>
+
+                  <div class="details">
+                        <div class="post-count">{{totalReviews}}</div>
+                        <div class="title">Posts</div>
+                  </div>
+            </div>
+            <div class="online">
+                  <span class="material-icons">
+                        account_circle
+                  </span>
+
+                  <div class="details">
+                        <div class="online-user-count">{{totalOnlineUsers}}</div>
+                        <div class="title">Online</div>
+                  </div>
+            </div>
+      </div>
+      <app-search [activeUser]="activeUser" *ngIf="activeUser"></app-search>
+</footer>

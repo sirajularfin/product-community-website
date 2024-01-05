@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.body {
+        width: 95%;
+        margin: 1em auto;
+        font-family: 'Roboto', sans-serif;
+}
+
+/* == Reviews == */
+
+.card {
+        border-radius: var(--bs-enable-rounded);
+        border: 1px solid #f2f2f2;
+}
+
+.card-title {
+        font-weight: 500;
+}
+
+.card-subtitle {
+        color: #fff;
+        background-color: #398E3D;
+        font-size: 0.8rem;
+        width: 3.2em;
+        padding: 0.1em 0;
+        border-radius: 0.25em;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        column-gap: 0.25em;
+}
+
+.material-icons {
+        font-size: 0.8rem;
+}
+
+.card-text {
+        font-weight: 400;
+        margin: 0.5em 0;
+}
+
+.reviewedBy {
+        font-size: 0.8rem;
+        text-align: right;
+}
+
+.button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5em;
+}
+
+button {
+        border-radius: var(--bs-enable-rounded);
+}
+
+/* == Media Queries == */
+@media (min-width: 992px) {
+        .body {
+                width: 95%;
+                display: grid;
+                grid-template-rows: auto;
+                grid-auto-flow: row;
+                grid-template-columns: repeat(3, 1fr);
+        }
+
+        .reviewInfo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        }
+}

@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+      --bs-enable-rounded: true;
+}
+
+#alert {
+      display: flex;
+      column-gap: 0.5em;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      z-index: 1;
+      animation: fade 3s ease-in;
+      animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+      to {
+            visibility: hidden;
+      }
+}
